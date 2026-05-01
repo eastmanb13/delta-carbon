@@ -1,0 +1,27 @@
+---
+title: "Delta Soil Core and Carbon"
+author: "Brooke Eastman"
+format: html
+---
+
+## Setup
+
+### Packages
+
+```{r}
+library(tidyr)
+library(readr)
+library(here)
+library(dplyr)
+```
+
+### read in data
+#### read in Coastal Carbon Network data
+
+```{r}
+# read in sites data
+delta_ccn_cores <- read_csv(here('data','CCN_cores.csv'))
+
+# get a list of study_ids that show what publications are included
+CCN_studies <- as.data.frame(unique(delta_ccn_cores$study_id))
+```
